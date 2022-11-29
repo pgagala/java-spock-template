@@ -1,0 +1,1 @@
+# java-spock-template
