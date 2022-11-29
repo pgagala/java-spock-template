@@ -11,8 +11,8 @@ repositories {
 }
 
 java {
-    sourceCompatibility = '19'
-    targetCompatibility = '19'
+    sourceCompatibility = "19.PREVIEW"
+    targetCompatibility = "19.PREVIEW"
 }
 
 dependencies {
@@ -22,9 +22,14 @@ dependencies {
     testImplementation "org.spockframework:spock-core"
 }
 
+tasks.withType(JavaCompile).each {
+    it.options.compilerArgs.add('--enable-preview')
+}
+
 test {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
     }
+    jvmArgs(['--enable-preview'])
 }
