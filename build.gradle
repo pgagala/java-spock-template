@@ -9,8 +9,11 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
-sourceCompatibility = '19'
-targetCompatibility = '19'
+
+java {
+    sourceCompatibility = '19'
+    targetCompatibility = '19'
+}
 
 dependencies {
     testImplementation platform('org.apache.groovy:groovy-bom:4.0.6')
